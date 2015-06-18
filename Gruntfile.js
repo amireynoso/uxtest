@@ -170,7 +170,7 @@ module.exports = function (grunt) {
                 options: {
                     port: 3040,
                     watchTask: true,
-                    startPath: '/ui.html',
+                    startPath: '/product-widget.html',
                     server: {
                         baseDir: [
                             // base path for views and demo assets
@@ -184,12 +184,8 @@ module.exports = function (grunt) {
 
                                 switch (req.url) {
                                     case '/':
-                                    case '/ui':
-                                        redirectTo = '/ui.html';
-                                        break;
-                                    case '/m':
-                                    case '/mobile':
-                                        redirectTo = '/mobile.html';
+                                    case '/product-widget':
+                                        redirectTo = '/product-widget.html';
                                         break;
                                 }
 

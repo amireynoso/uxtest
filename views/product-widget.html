@@ -23,7 +23,7 @@
         <h1>Ipad Mini Apple 16GB Wifi Led 7.9</h1>
         <div class="mesh-row">
             <div class="product-image mesh-col-s-4 mesh-col-l-6">
-                <img src="http://placehold.it/500x400" alt="Product name">
+                <img src="static/placeholder-500x450.png" alt="Product name">
             </div>
             <div class="product-description mesh-col-s-8 mesh-col-l-6">
                 <div class="ch-price">$ 4799<sup>99</sup></div>
@@ -44,16 +44,31 @@
                             <option>1</option>
                             <option>3</option>
                             <option>6</option>
-                            <option>12</option>
+                            <option selected>12</option>
                             <option>18</option>
                         </select>
                     </label>
-                    <button type="submit" class="button button-buy">Buy</button>
+                    <button type="submit" class="ch-btn ch-btn-large">Buy</button>
                 </form>
                 <p class="annotation">MercadoLibre isn't the owner of this product</p>
                 <article class="more-products">
                     <h2>More products like this</h2>
-                    <div class="more-carousel"></div>
+                    <div class="more-carousel ch-carousel">
+                        <ul>
+                            <li><img src="static/placeholder-100x100.png" alt="Product name"></li>
+                            <li><img src="static/placeholder-100x100.png" alt="Product name"></li>
+                            <li><img src="static/placeholder-100x100.png" alt="Product name"></li>
+                            <li><img src="static/placeholder-100x100.png" alt="Product name"></li>
+                            <li><img src="static/placeholder-100x100.png" alt="Product name"></li>
+                            <li><img src="static/placeholder-100x100.png" alt="Product name"></li>
+                            <li><img src="static/placeholder-100x100.png" alt="Product name"></li>
+                            <li><img src="static/placeholder-100x100.png" alt="Product name"></li>
+                            <li><img src="static/placeholder-100x100.png" alt="Product name"></li>
+                            <li><img src="static/placeholder-100x100.png" alt="Product name"></li>
+                            <li><img src="static/placeholder-100x100.png" alt="Product name"></li>
+                            <li><img src="static/placeholder-100x100.png" alt="Product name"></li>
+                        </ul>
+                    </div>
                 </article>
             </div>
         </div>
@@ -81,87 +96,6 @@
                      console.log(errors);
                  });
 
-        $('form').on('submit.form', function (event) {
-            if (!form.hasError()) {
-                event.preventDefault();
-                console.log('Ademas hago otra cosa en el submit');
-            }
-        });
-
-        // Validators
-        // var validation1 = $('#input_ico').validation({
-        //     'conditions': [
-        //         {
-        //             'name': 'required',
-        //             'message': 'Mensaje de requerido.'
-        //         },
-        //         {
-        //             'name': 'custom-validation',
-        //             'fn': function (value) { return value === 'custom-validation';},
-        //             'message': 'This is a custom-validation!'
-        //         }
-        //     ],
-        //     'offsetX': 0,
-        //     'offsetY': 10,
-        //     'side': 'bottom',
-        //     'align': 'left',
-
-        // });
-
-        // var validation1 = $('#input_ico')
-        //       .required({
-        //         'offsetX': 0,
-        //         'offsetY': 10,
-        //         'side': 'bottom',
-        //         'align': 'left',
-        //         'message': 'Mensaje de requerido.'
-        //       }).and()
-        //       .custom('custom-validation', function (value) { return value === "custom-validation";}, 'This is a custom-validation!')
-        //       .and().custom('another-custom-validation', function (value) { return value === "another-custom-validation";}, 'This is an another-custom-validation!');
-
-
-
-        var  validation1 = $('#input_ico').required({
-            'reference': $('#input_ico + .ch-form-icon')
-        }).and().string();
-        var  validation2 = $('#input_ico_inside').required().and().string();
-        var  validation4 = $('#email').required().and().email();
-        var  validation5 = $('#custom')
-         .custom(
-             'myCustom1',
-             function (v) {
-                 if (v.toString().indexOf("1") > -1) {
-                     return true;
-                 }
-                 return false;
-             },
-             'The number must contain a 1.')
-         .and()
-         .custom(
-             'myCustom2',
-             function (v) {
-                 if (v.toString().indexOf("2") > -1) {
-                     return true;
-                 }
-                 return false;
-             },
-             'The number must contain a 2.');
-
-        var validation6 = $('#url').url()
-        var validation7 = $('#number').number().and().min(5);
-        var validation8 = $('#range').min(8).and().max(10);
-        var validation9 = $('#characters').maxLength(20).and().minLength(6);
-        var validation10 = $('#select2').required(message('option'));
-        var validation11 = $('.required-check').required(message('requiredCheck'));
-        var validation12 = $('.required-option').required(message('option'));
-        var validation13 = $('#double').required(message('link')).and().number();
-        var validation14 = $('#textarea2').required();
-
-        [].forEach.call(document.querySelectorAll('a[href="#"]'), function(a) {
-            a.addEventListener('click', function(e){
-                e.preventDefault();
-            });
-        });
     </script>
 </body>
 </html>

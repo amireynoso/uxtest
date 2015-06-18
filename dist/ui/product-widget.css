@@ -2967,7 +2967,7 @@ a:focus {
 .product {
   margin: 2em auto;
   max-width: 70%;
-  border: 1px solid #ddd;
+  border: 1px solid #ccc;
   padding: 1em;
 }
 .product h1 {
@@ -2978,15 +2978,60 @@ a:focus {
   max-width: 100%;
   height: auto;
 }
-.product .ch-price {
+.product-description .ch-price {
   font-size: 3em;
   line-height: 1;
 }
-.product .ch-price sup {
+.product-description .ch-price sup {
   font-size: .5em;
 }
-.product form {
-  margin: 1em 0;
+.product-description form {
+  margin: 1.5em 0 .5em;
+  font-size: 1.1em;
+}
+.product-description form label {
+  display: block;
+  margin: .5em 0;
+  max-width: 10em;
+}
+.product-description form label select {
+  display: inline-block;
+  margin-left: .5em;
+  float: right;
+}
+.product-description form button {
+  margin-top: .8em;
+}
+.product-description .annotation {
+  color: #999;
+}
+.product-description .more-products {
+  margin-top: 1.5em;
+}
+.product-description .more-products .ch-carousel-item {
+  height: 100px;
+  width: 100px;
+}
+.product-description .more-products .ch-carousel-item img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.product-description .more-products .ch-carousel-mask {
+  margin: 0 2em;
+}
+.product-description .more-products .ch-carousel-prev,
+.product-description .more-products .ch-carousel-next {
+  top: 0;
+  margin: 0;
+  width: auto;
+  height: 100px;
+  line-height: 100px;
+}
+.product-description .more-products .ch-carousel-prev::after {
+  left: 0;
+}
+.product-description .more-products .ch-carousel-next::after {
+  right: 0;
 }
 .product hr {
   border-bottom-style: solid;

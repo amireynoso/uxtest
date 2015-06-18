@@ -24,16 +24,61 @@
 		height: auto;
 	}
 
-	.ch-price {
-		font-size: 3em;
-		line-height: 1;
+	&-description {
+		.ch-price {
+			font-size: 3em;
+			line-height: 1;
 
-		sup { font-size: .5em; }
+			sup { font-size: .5em; }
+		}
+
+		form {
+			margin: 1.5em 0 .5em;
+			font-size: 1.1em;
+
+			label {
+				display: block;
+				margin: .5em 0;
+				max-width: 10em;
+
+				select {
+					display: inline-block;
+					margin-left: .5em;
+					float: right;
+				}
+			}
+
+			button { margin-top: .8em; }
+		}
+
+		.annotation { color: $product-annotation-color; }
+		.more-products {
+			margin-top: 1.5em;
+
+			.ch-carousel-item {
+	            @include size($product-carousel-item-size);
+
+	            img {
+		            max-width: 100%;
+		            max-height: 100%;
+		        }
+	        }
+
+	        .ch-carousel-mask { margin: 0 2em; }
+	        .ch-carousel-prev,
+	        .ch-carousel-next {
+	        	top: 0;
+	        	margin: 0;
+	        	width: auto;
+	        	height: $product-carousel-item-size;
+	        	line-height: $product-carousel-item-size;
+	        }
+        	
+        	.ch-carousel-prev::after { left: 0; }
+        	.ch-carousel-next::after { right: 0; }
+		}
 	}
 
-	form {
-		margin: 1em 0;
-	}
 
 	hr { border-bottom-style: solid; }
 }
