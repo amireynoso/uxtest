@@ -112,7 +112,7 @@ module.exports = function (grunt) {
             },
             ui: {
                 files: {
-                    'dist/ui/<%= pkg.name %>.css': 'src/ui/styles/ui-theme.scss'
+                    'dist/ui/product-widget.css': 'src/ui/styles/product-widget.scss'
                 }
             },
             mobile: {
