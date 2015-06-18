@@ -2,24 +2,23 @@
 <!--[if IE 7]>  <html class="no-js lt-ie10 lt-ie9 lt-ie8 ie7" lang="en"> <![endif]-->
 <!--[if IE 8]>  <html class="no-js lt-ie10 lt-ie9 ie8" lang="en"> <![endif]-->
 <!--[if IE 9]>  <html class="no-js lt-ie10 ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="es"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <title>Product Widget - UX Test</title>
+    <meta name="description" content="Technical practical test by Mercado Libre, coded by Ami Reynoso based on Chico UI">
+    <meta name="keywords" content="chico ui, mercado libre, test, ux, product widget, Ami Reynoso">
+    <meta name="author" content="Ami Reynoso">
 
     <!-- Mobile viewport optimization http://goo.gl/b9SaQ -->
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta http-equiv="cleartype" content="on">
+    <!--[if (IEMobile)]> <meta http-equiv="cleartype" content="on"> <![endif]-->
 
-    <link rel="stylesheet" href="/bower_components/mesh/index.css">
-    <link rel="stylesheet" href="/dist/ui/product-widget.css">
-    
+    <link rel="stylesheet" href="/dist/ui/product-widget.min.css">    
 </head>
-
 <body>
-    
-    <section class="product">
+    <section class="product" role="main">
         <h1>Ipad Mini Apple 16GB Wifi Led 7.9</h1>
         <div class="mesh-row">
             <div class="product-image mesh-col-s-6">
@@ -28,27 +27,27 @@
             <div class="product-description mesh-col-s-6">
                 <div class="ch-price">$ 4799<sup>99</sup></div>
                 <form>
-                    <label>
-                        Quantity
-                        <select>
+                    <fieldset>
+                        <label for="quantity">Quantity</label>
+                        <select name="quantity" id="quantity">
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
                             <option>4</option>
                             <option>5</option>
                         </select>
-                    </label>
-                    <label>
-                        Payments
-                        <select>
+                    </fieldset>
+                    <fieldset>
+                        <label for="payments">Payments</label>
+                        <select name="payments" id="payments">
                             <option>1</option>
                             <option>3</option>
                             <option>6</option>
-                            <option selected>12</option>
+                            <option aria-selected="true" selected>12</option>
                             <option>18</option>
                         </select>
-                    </label>
-                    <button type="submit" id="transition" class="ch-btn ch-btn-large">Buy</button>
+                    </fieldset>
+                    <button type="submit" id="submit" class="ch-btn ch-btn-large">Buy</button>
                 </form>
                 <p class="annotation">MercadoLibre isn't the owner of this product</p>
                 <article class="more-products">
@@ -72,18 +71,20 @@
                 </article>
             </div>
         </div>
+        
         <hr>
+
         <div class="product-tabs ch-tabs">
-            <ul class="ch-tabs-triggers">
-                <li><a href="#tab-description" class="ch-tab">Product Description</a></li>
-                <li><a href="#tab-questions" class="ch-tab">Questions</a></li>
+            <ul class="ch-tabs-triggers" role="tablist">
+                <li role="presentation"><a href="#tab-description" class="ch-tab" role="tab">Product Description</a></li>
+                <li role="presentation"><a href="#tab-questions" class="ch-tab" role="tab">Questions</a></li>
             </ul>
             <div class="ch-box-lite">
-                <div id="tab-description" class="ch-hide">
+                <div id="tab-description" class="ch-hide" role="tabpanel">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet purus in sapien luctus sodales. Curabitur dui velit, cursus in sagittis aliquam, dictum at neque. Ut gravida scelerisque lorem non pulvinar. Pellentesque et urna vitae nisl porta imperdiet sed nec ipsum. Sed non sem velit. Cras id consectetur tellus.</p>
                     <p>Vestibulum posuere purus non enim pharetra vel vulputate eros hendrerit. Ut pulvinar placerat risus quis interdum. Mauris eget tempus risus. Aenean accumsan dolor in lorem elementum ac tincidunt urna rutrum. Sed sit amet nunc velit, vitae tincidunt ipsum. Fusce mattis elementum justo, et lacinia odio pharetra a.</p>
                 </div>
-                <div id="tab-questions">
+                <div id="tab-questions" role="tabpanel">
                     <div class="ch-box-info">
                         <h3>Buyer</h3>
                         <p>Do you have this one on white?</p>
@@ -97,21 +98,7 @@
         </div>
     </section>
 
-    <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <script src="/dist/ui/chico.js"></script>
-    <script>
-        // Carousel
-        var carousel = $(".more-carousel").carousel({"pagination": true});
-
-        // Tabs
-        var tabs = $(".product-tabs").tabs();
-        tabs.on('ready',function () {
-            this.show(2);
-        });
-
-        // Form submit
-        var modal = $('#transition').modal('./static/transaction-success.html');
-
-    </script>
+    <script src="/dist/ui/vendor.min.js"></script>
+    <script src="/dist/ui/product-widget.min.js"></script>
 </body>
 </html>

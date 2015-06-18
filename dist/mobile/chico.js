@@ -1,3 +1,12 @@
+/*!
+ * Chico Theme UI v1.2.0
+ * http://chico-ui.com.ar/
+ *
+ * Copyright (c) 2015, MercadoLibre.com
+ * Released under the MIT license.
+ * http://chico-ui.com.ar/license
+ */
+
 
 (function (window, $) {
 	'use strict';

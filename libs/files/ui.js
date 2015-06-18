@@ -5,6 +5,13 @@ var JS = {},
     CSS = {};
 
 /*
+ * JS: Dependencies
+ */
+JS.dependencies = [
+    "bower_components/jquery/dist/jquery.js"
+];
+
+/*
  * JS: Core
  */
 JS.core = [
@@ -67,7 +74,8 @@ JS.components = [
     "src/shared/scripts/Countdown.js",
     "src/ui/scripts/Datepicker.js",
     "src/shared/scripts/Autocomplete.js",
-    "src/ui/scripts/Autocomplete.js"
+    "src/ui/scripts/Autocomplete.js",
+    "src/ui/scripts/Product.js"
 ];
 
 

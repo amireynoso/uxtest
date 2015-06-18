@@ -3,7 +3,7 @@
 
 @import 'ui-theme';
 @import 'product-variables';
-
+@import 'bower_components/mesh/index';
 
 // > Product widget
 // ------------------------------------------------------
@@ -37,10 +37,15 @@
 			margin: 1.5em 0 .5em;
 			font-size: 1.1em;
 
-			label {
-				display: block;
+			fieldset {
+				@include clearfix;
 				margin: .5em 0;
 				max-width: 10em;
+
+				label {
+					display: inline-block;
+					float: left;
+				}
 
 				select {
 					display: inline-block;
@@ -48,7 +53,7 @@
 					float: right;
 				}
 
-				// add bottom margin to last label instead
+				// add bottom margin to last fieldset instead
 				// of button as it resets on focus
 				&:last-of-type { margin-bottom: 1.5em; }
 			}
@@ -83,7 +88,7 @@
 	}
 
 
-	hr { border-bottom-style: solid; }
+	hr { border-bottom: 1px solid $product-hr-color; }
 }
 
 // > Media queries

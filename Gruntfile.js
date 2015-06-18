@@ -32,6 +32,10 @@ module.exports = function (grunt) {
                     }
                 }
             },
+            coreVendor: {
+                src: uiFiles.JS.dependencies,
+                dest: 'temp/ui/vendor.tmp.js'
+            },
             coreUi: {
                 options: {
                     banner: "\n(function (window, $) {\n\t'use strict';\n\n",
@@ -48,9 +52,13 @@ module.exports = function (grunt) {
                 src: mobileFiles.JS.core,
                 dest: 'temp/mobile/core.tmp.js'
             },
+            jsVendor: {
+                src: ['<%= concat.coreVendor.dest %>'],
+                dest: 'dist/ui/vendor.js'
+            },
             jsUi: {
                 src: ['<%= concat.coreUi.dest %>'].concat(uiFiles.JS.abilities).concat(uiFiles.JS.components),
-                dest: 'dist/ui/<%= pkg.name %>.js'
+                dest: 'dist/ui/product-widget.js'
             },
             jsMobile: {
                 src: ['<%= concat.coreMobile.dest %>'].concat(mobileFiles.JS.abilities).concat(mobileFiles.JS.components),
@@ -130,9 +138,10 @@ module.exports = function (grunt) {
                 advanced: true // TODO: Validate the output
             },
             distUi: {
-                src: 'dist/ui/<%= pkg.name %>.css',
-                dest: 'dist/ui/<%= pkg.name %>.min.css'
+                src: 'dist/ui/product-widget.css',
+                dest: 'dist/ui/product-widget.min.css'
             },
+
             distMobile: {
                 options: {
                     compatibility: '*'
@@ -239,9 +248,13 @@ module.exports = function (grunt) {
                 mangle: true
             },
 
+            jsVendorDist: {
+                src: ['<%= concat.jsVendor.dest %>'],
+                dest: 'dist/ui/vendor.min.js'
+            },
             jsUiDist: {
                 src: ['<%= concat.jsUi.dest %>'],
-                dest: 'dist/ui/<%= pkg.name %>.min.js'
+                dest: 'dist/ui/product-widget.min.js'
             },
             jsMobileDist: {
                 src: ['<%= concat.jsMobile.dest %>'],
@@ -264,7 +277,7 @@ module.exports = function (grunt) {
 
         // Validates JavaScript files with JSLint as a grunt task.
         'jslint': {
-            'files': uiFiles.JS.abilities.concat(uiFiles.JS.components).concat(mobileFiles.JS.abilities).concat(mobileFiles.JS.components),
+            'files': uiFiles.JS.dependencies.concat(uiFiles.JS.abilities).concat(uiFiles.JS.components).concat(mobileFiles.JS.abilities).concat(mobileFiles.JS.components),
             'directives': {
                 'browser': true,
                 'nomen': true,
@@ -274,26 +287,6 @@ module.exports = function (grunt) {
                 'errorsOnly': true, // only display errors
                 'failOnError': false, // defaults to true
                 'shebang': true // ignore shebang lines
-            }
-        },
-
-        // Builds an API documentation
-        jsdoc: {
-            ui: {
-                'src': uiFiles.JS.core.concat(uiFiles.JS.abilities).concat(uiFiles.JS.components),
-                'options': {
-                    'template': './libs/doc-template',
-                    'destination': './doc/ui',
-                    'private': false
-                }
-            },
-            mobile: {
-                'src': mobileFiles.JS.core.concat(mobileFiles.JS.abilities).concat(mobileFiles.JS.components),
-                'options': {
-                    'template': './libs/doc-template',
-                    'destination': './doc/mobile',
-                    'private': false
-                }
             }
         }
     });
@@ -315,10 +308,9 @@ module.exports = function (grunt) {
     // Resgister task(s).
     grunt.registerTask('default', []);
     grunt.registerTask('lint', ['jslint']);
-    grunt.registerTask('doc', ['jsdoc:ui', 'jsdoc:mobile']);
     grunt.registerTask('build', ['copy:assets', 'sass', 'concat', 'clean']);
     grunt.registerTask('sync', ['browserSync:dev', 'watch']);
-    grunt.registerTask('dev', ['build', 'sync']);
+    grunt.registerTask('dev', ['dist', 'sync']);
     grunt.registerTask('test', ['build', 'browserSync:test', 'watch']);
-    grunt.registerTask('dist', ['copy:assets', 'sass', 'cssmin', 'concat', 'uglify:jsUiDist', 'uglify:jsMobileDist', 'usebanner', 'clean']);
+    grunt.registerTask('dist', ['copy:assets', 'sass', 'cssmin', 'concat', 'uglify:jsVendorDist',  'uglify:jsUiDist', 'uglify:jsMobileDist', 'usebanner', 'clean']);
 };

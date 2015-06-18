@@ -7,42 +7,6 @@
  * http://chico-ui.com.ar/license
  */
 
-/*!
- * Chico Theme UI v1.2.0
- * http://chico-ui.com.ar/
- *
- * Copyright (c) 2015, MercadoLibre.com
- * Released under the MIT license.
- * http://chico-ui.com.ar/license
- */
-
-/*!
- * Chico Theme UI v1.2.0
- * http://chico-ui.com.ar/
- *
- * Copyright (c) 2015, MercadoLibre.com
- * Released under the MIT license.
- * http://chico-ui.com.ar/license
- */
-
-/*!
- * Chico Theme UI v1.2.0
- * http://chico-ui.com.ar/
- *
- * Copyright (c) 2015, MercadoLibre.com
- * Released under the MIT license.
- * http://chico-ui.com.ar/license
- */
-
-/*!
- * Chico Theme UI v1.2.0
- * http://chico-ui.com.ar/
- *
- * Copyright (c) 2015, MercadoLibre.com
- * Released under the MIT license.
- * http://chico-ui.com.ar/license
- */
-
 
 (function (window, $) {
 	'use strict';
@@ -11335,3 +11299,14 @@ ch.factory = function (Klass, fn) {
     };
 
 }(this.ch.Autocomplete, this.ch));
+// Carousel
+var carousel = $(".more-carousel").carousel({"pagination": true});
+
+// Tabs
+var tabs = $(".product-tabs").tabs();
+tabs.on('ready',function () {
+    this.show(2);
+});
+
+// Form submit
+var modal = $('#submit').modal('./static/transaction-success.html');

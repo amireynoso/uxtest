@@ -3,21 +3,22 @@
 
 // Colors
 
-$product-border-color       : #ccc !default;
-$product-price-color        : #900 !default;
-$product-annotation-color   : #999 !default;
+$product-border-color     : #ccc !default;
+$product-price-color      : #900 !default;
+$product-annotation-color : #999 !default;
+$product-hr-color         : $product-border-color !default;
 
 // Sizes
-$product-carousel-size : 100px !default;
-$product-carousel-size-xs: 75px !default;
-$product-carousel-size-sm: 70px !default;
+$product-carousel-size    : 100px !default;
+$product-carousel-size-xs : 75px !default;
+$product-carousel-size-sm : 70px !default;
 
 // Breakpoints
-$breakpoint-lg-min          : 1200px !default;
-$breakpoint-md-min          : 992px !default;
-$breakpoint-sm-min          : 768px !default;
-$breakpoint-xs-min          : 480px !default;
+$breakpoint-lg-min        : 1200px !default;
+$breakpoint-md-min        : 992px !default;
+$breakpoint-sm-min        : 768px !default;
+$breakpoint-xs-min        : 480px !default;
 
-$breakpoint-xs-max          : ($breakpoint-sm-min - 1) !default;
-$breakpoint-sm-max          : ($breakpoint-md-min - 1) !default;
-$breakpoint-md-max          : ($breakpoint-lg-min - 1) !default;
+$breakpoint-xs-max        : ($breakpoint-sm-min - 1) !default;
+$breakpoint-sm-max        : ($breakpoint-md-min - 1) !default;
+$breakpoint-md-max        : ($breakpoint-lg-min - 1) !default;
