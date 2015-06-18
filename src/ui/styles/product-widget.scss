@@ -46,9 +46,11 @@
 					margin-left: .5em;
 					float: right;
 				}
-			}
 
-			button { margin-top: .8em; }
+				// add bottom margin to last label instead
+				// of button as it resets on focus
+				&:last-of-type { margin-bottom: 1.5em; }
+			}
 		}
 
 		.annotation { color: $product-annotation-color; }

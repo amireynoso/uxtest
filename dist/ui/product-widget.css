@@ -2999,8 +2999,8 @@ a:focus {
   margin-left: .5em;
   float: right;
 }
-.product-description form button {
-  margin-top: .8em;
+.product-description form label:last-of-type {
+  margin-bottom: 1.5em;
 }
 .product-description .annotation {
   color: #999;
