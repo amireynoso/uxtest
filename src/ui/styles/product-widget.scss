@@ -16,6 +16,7 @@
 
 	h1 {
 		font-size: 2.5em;
+		line-height: 1.1;
 		margin-bottom: 1em;
 	}
 
@@ -58,7 +59,7 @@
 			margin-top: 1.5em;
 
 			.ch-carousel-item {
-	            @include size($product-carousel-item-size);
+	            @include size($product-carousel-size);
 
 	            img {
 		            max-width: 100%;
@@ -72,8 +73,8 @@
 	        	top: 0;
 	        	margin: 0;
 	        	width: auto;
-	        	height: $product-carousel-item-size;
-	        	line-height: $product-carousel-item-size;
+	        	height: $product-carousel-size;
+	        	line-height: $product-carousel-size;
 	        }
         	
         	.ch-carousel-prev::after { left: 0; }
@@ -83,4 +84,37 @@
 
 
 	hr { border-bottom-style: solid; }
+}
+
+// > Media queries
+// ------------------------------------------------------
+
+@media screen and (max-width: $breakpoint-xs-max) {
+	.product {
+		max-width: 90%;
+
+		h1 { font-size: 1.8em; }
+		&-description {
+			.ch-price { margin-top: .5em; }
+		}
+		.more-products {
+			.ch-carousel-item { @include size($product-carousel-size-xs); }
+		}
+		.ch-tab { font-size: .9em; }
+	}
+}
+
+@media screen and (max-width: $breakpoint-sm-max) {
+	.product {
+		max-width: 80%;
+		
+		h1 { font-size: 2em; }
+		.more-products {
+			.ch-carousel-item { @include size($product-carousel-size-xs); }
+		}
+	}
+}
+
+@media screen and (max-width: $breakpoint-md-max) {
+	.product { max-width: 85%; }
 }

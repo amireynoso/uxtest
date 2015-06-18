@@ -2972,6 +2972,7 @@ a:focus {
 }
 .product h1 {
   font-size: 2.5em;
+  line-height: 1.1;
   margin-bottom: 1em;
 }
 .product-image img {
@@ -3035,6 +3036,42 @@ a:focus {
 }
 .product hr {
   border-bottom-style: solid;
+}
+
+@media screen and (max-width: 767px) {
+  .product {
+    max-width: 90%;
+  }
+  .product h1 {
+    font-size: 1.8em;
+  }
+  .product-description .ch-price {
+    margin-top: .5em;
+  }
+  .product .more-products .ch-carousel-item {
+    height: 75px;
+    width: 75px;
+  }
+  .product .ch-tab {
+    font-size: .9em;
+  }
+}
+@media screen and (max-width: 991px) {
+  .product {
+    max-width: 80%;
+  }
+  .product h1 {
+    font-size: 2em;
+  }
+  .product .more-products .ch-carousel-item {
+    height: 75px;
+    width: 75px;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .product {
+    max-width: 85%;
+  }
 }
 
 /*# sourceMappingURL=product-widget.css.map */
